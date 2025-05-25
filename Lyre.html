@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clavier Lyre – OQS</title>
+<style>
+  body {
+    background-color: #121212;
+    color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 2rem;
+    text-align: center;
+  }
+  .key {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: #6f42c1;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+  .key:hover {
+    background-color: #5a369e;
+  }
+</style>
+</head>
+<body>
+  <h1>Clavier Lyre – OQS</h1>
+  <div id="keyboard">
+    <div class="key" data-note="Ut">Ut</div>
+    <div class="key" data-note="Ré">Ré</div>
+    <div class="key" data-note="Mi">Mi</div>
+    <div class="key" data-note="Fa">Fa</div>
+    <div class="key" data-note="Sol">Sol</div>
+    <div class="key" data-note="La">La</div>
+    <div class="key" data-note="Si">Si</div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.key').forEach(key => {
+      key.addEventListener('click', () => {
+        const note = key.getAttribute('data-note');
+        alert('Tu as joué la note : ' + note);
+      });
+    });
+  </script>
+</body>
+</html>
